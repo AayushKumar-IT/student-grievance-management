@@ -1,0 +1,89 @@
+<app-sidebar />
+<div class="main-content">
+  <app-navbar />
+  <div class="page-content">
+
+    <div class="page-header">
+      <div>
+        <h2>College Admins</h2>
+        <p class="text-muted">All college administrators across the system</p>
+      </div>
+    </div>
+
+    <div class="alert alert-danger" *ngIf="error">
+      <i class="fas fa-exclamation-circle"></i> {{ error }}
+    </div>
+
+    <!-- Filters -->
+    <div class="card filters-card">
+      <div class="filters-row">
+        <select class="form-control filter-select"
+                [(ngModel)]="selectedCollegeId"
+                (ngModelChange)="onCollegeChange()">
+          <option [ngValue]="null">All Colleges</option>
+          <option *ngFor="let c of colleges" [ngValue]="c.id">{{ c.name }}</option>
+        </select>
+
+        <div class="search-box">
+          <i class="fas fa-search"></i>
+          <input type="text" class="form-control"
+                 placeholder="Name, email..."
+                 [(ngModel)]="searchTerm"
+                 (ngModelChange)="applySearch()" />
+        </div>
+
+        <button *ngIf="hasFilters" class="btn btn-secondary btn-sm" (click)="clearFilters()">
+          <i class="fas fa-times"></i> Clear
+        </button>
+      </div>
+      <p class="results-count">
+        Showing <strong>{{ filtered.length }}</strong> of <strong>{{ admins.length }}</strong> admins
+      </p>
+    </div>
+
+    <app-loading-spinner *ngIf="loading" />
+
+    <ng-container *ngIf="!loading">
+
+      <!-- Empty state -->
+      <div class="card empty-state" *ngIf="!filtered.length">
+        <i class="fas fa-user-shield"></i>
+        <h3>No college admins found</h3>
+        <p>College admins are registered via registration tokens.</p>
+      </div>
+
+      <!-- Table -->
+      <div class="card table-card" *ngIf="filtered.length">
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>College</th>
+                <th>Phone</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let a of filtered; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>
+                  <div class="name-cell">
+                    <span class="name">{{ a.user?.firstName }} {{ a.user?.lastName }}</span>
+                    <span class="email">{{ a.user?.email }}</span>
+                  </div>
+                </td>
+                <td>
+                  <span class="college-name">{{ a.college?.name }}</span>
+                  <span class="college-code">{{ a.college?.code }}</span>
+                </td>
+                <td>{{ a.phoneNumber || '—' }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </ng-container>
+  </div>
+</div>

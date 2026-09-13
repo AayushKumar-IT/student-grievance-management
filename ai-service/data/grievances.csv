@@ -1,0 +1,63 @@
+title,description,category,priority,is_fake
+Exam result not updated,My semester exam result is not showing in the portal although other students can see theirs.,ACADEMIC,HIGH,0
+Marks correction request,My internal marks are incorrect and the faculty has not corrected them after my request.,ACADEMIC,MEDIUM,0
+Attendance shortage issue,My attendance was marked absent even though I attended the laboratory sessions.,ACADEMIC,MEDIUM,0
+Timetable conflict,Two mandatory classes are scheduled at the same time and I cannot attend both.,ACADEMIC,MEDIUM,0
+Teacher not taking class,Our subject classes have been cancelled repeatedly and the syllabus is incomplete.,ACADEMIC,HIGH,0
+Exam hall issue,The examination hall allocation is missing from my admit card.,ACADEMIC,HIGH,0
+Project evaluation concern,My project evaluation marks appear inconsistent with the rubric shared by the department.,ACADEMIC,MEDIUM,0
+Library book unavailable,The required reference book is not available in the library for our final project.,LIBRARY,LOW,0
+Library timing complaint,The library closes before evening students can use it for study.,LIBRARY,LOW,0
+Book renewal problem,I cannot renew an issued book even though there is no reservation on it.,LIBRARY,LOW,0
+Lab computer not working,The computer assigned to our laboratory seat does not start and practical work is blocked.,LABORATORY,HIGH,0
+Laboratory equipment missing,Several required instruments are unavailable during the scheduled practical.,LABORATORY,HIGH,0
+Lab safety problem,The electrical wiring near the laboratory workbench is damaged and unsafe.,LABORATORY,CRITICAL,0
+Software unavailable in lab,The required programming software is not installed on the laboratory computers.,LABORATORY,MEDIUM,0
+Hostel water shortage,There has been no water supply on our hostel floor since yesterday.,HOSTEL,HIGH,0
+Hostel room repair,The ceiling fan in my hostel room is broken and needs repair.,HOSTEL,MEDIUM,0
+Hostel food quality,The food served in the hostel mess is frequently undercooked.,HOSTEL,MEDIUM,0
+Hostel electricity failure,My hostel block has had repeated power failures during the night.,HOSTEL,HIGH,0
+Warden not responding,Multiple hostel maintenance complaints have been submitted but the warden has not responded.,HOSTEL,HIGH,0
+Room allocation issue,I was assigned a room different from the allocation shown in the hostel portal.,HOSTEL,MEDIUM,0
+Ragging complaint,I am being subjected to ragging by senior students and I feel unsafe.,HARASSMENT,CRITICAL,0
+Threat from student,A student threatened me after I reported misconduct and I am afraid for my safety.,HARASSMENT,CRITICAL,0
+Harassment by senior,I am receiving repeated abusive messages from a senior student.,HARASSMENT,HIGH,0
+Discrimination complaint,I am being treated differently by staff because of a personal characteristic.,HARASSMENT,HIGH,0
+Assault incident,I was physically assaulted near the hostel and need immediate help.,HARASSMENT,CRITICAL,0
+Unsafe behavior report,A group of students is using threatening language and I need administration support.,HARASSMENT,HIGH,0
+Bullying complaint,Students repeatedly bully me in class and I want the issue reviewed.,HARASSMENT,HIGH,0
+Fee charged twice,My tuition fee was deducted twice for the same semester payment.,FINANCIAL,HIGH,0
+Refund not received,I was approved for a fee refund but the amount has not reached my account.,FINANCIAL,MEDIUM,0
+Scholarship payment delay,My scholarship payment is pending even though my documents were verified.,FINANCIAL,HIGH,0
+Wrong fee amount,The portal shows a fee amount higher than the official fee notice.,FINANCIAL,HIGH,0
+Payment receipt missing,I paid my examination fee but cannot download the receipt.,FINANCIAL,MEDIUM,0
+Fee waiver issue,My approved fee concession is not reflected in the student account.,FINANCIAL,MEDIUM,0
+Bus pass problem,My college bus pass is not active even after renewal.,TRANSPORTATION,MEDIUM,0
+Bus route complaint,The college bus does not stop at the announced location.,TRANSPORTATION,LOW,0
+Transport delay,The morning college bus has been arriving more than thirty minutes late.,TRANSPORTATION,MEDIUM,0
+Unsafe bus driving,The driver is driving dangerously and students are concerned about safety.,TRANSPORTATION,HIGH,0
+Bus overcrowding,The route is overcrowded and many students have to stand during travel.,TRANSPORTATION,MEDIUM,0
+Transport schedule issue,The published bus schedule does not match the actual departure times.,TRANSPORTATION,LOW,0
+ID card correction,My student identity card has an incorrect department name.,ADMINISTRATIVE,LOW,0
+Certificate request delay,My requested bonafide certificate has not been issued after several days.,ADMINISTRATIVE,MEDIUM,0
+Document verification issue,The administration portal still shows my documents as pending after submission.,ADMINISTRATIVE,MEDIUM,0
+Admission record error,My admission record contains an incorrect date of birth and needs correction.,ADMINISTRATIVE,HIGH,0
+Office staff unavailable,The student office counter is repeatedly closed during announced working hours.,ADMINISTRATIVE,LOW,0
+Transfer certificate delay,My transfer certificate request has not been processed within the stated time.,ADMINISTRATIVE,MEDIUM,0
+Broken classroom fan,The fan in classroom B204 is not working and the room becomes very hot.,INFRASTRUCTURE,MEDIUM,0
+Water leakage,There is water leakage from the ceiling in our classroom during rain.,INFRASTRUCTURE,HIGH,0
+Damaged classroom lights,Several lights in the classroom are not working and visibility is poor.,INFRASTRUCTURE,MEDIUM,0
+Washroom maintenance,The washroom near the academic block needs urgent cleaning and plumbing repair.,INFRASTRUCTURE,HIGH,0
+Lift not working,The lift in the academic building has been out of service for several days.,INFRASTRUCTURE,HIGH,0
+Road damage,The internal road near the college gate has large potholes and is unsafe.,INFRASTRUCTURE,HIGH,0
+Cafeteria issue,The cafeteria seating area has broken tables and poor maintenance.,INFRASTRUCTURE,LOW,0
+Network outage,Campus WiFi is unavailable in the computer science block.,INFRASTRUCTURE,HIGH,0
+General suggestion,I have a suggestion to improve the student grievance process.,OTHER,LOW,0
+Sports facility request,Students would like longer access hours for the sports ground.,OTHER,LOW,0
+Campus cleanliness concern,The open area behind the academic block needs regular cleaning.,OTHER,LOW,0
+Test,Test,OTHER,LOW,1
+Lorem ipsum,lorem ipsum lorem ipsum,OTHER,LOW,1
+abc,abc,OTHER,LOW,1
+This is fake complaint,This is only a test complaint and does not describe a real issue.,OTHER,LOW,1
+No issue,Everything is fine this is just testing the form.,OTHER,LOW,1
+hello,hello,OTHER,LOW,1

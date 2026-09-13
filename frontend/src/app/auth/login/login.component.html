@@ -1,0 +1,217 @@
+<div class="auth-wrapper">
+  <div class="auth-card">
+
+    <!-- Header -->
+    <div class="auth-header">
+      <div class="auth-logo">
+        <i class="fas fa-graduation-cap"></i>
+      </div>
+
+      <h2>Welcome Back</h2>
+      <p>Sign in to the Grievance Management System</p>
+    </div>
+
+    <!-- Error Message -->
+    <div class="alert alert-danger" *ngIf="error">
+      <i class="fas fa-exclamation-circle"></i>
+      {{ error }}
+    </div>
+
+    <!-- Success Message -->
+    <div class="alert alert-success" *ngIf="successMessage">
+      <i class="fas fa-check-circle"></i>
+      {{ successMessage }}
+    </div>
+
+    <!-- Mode Toggle Tabs -->
+    <div class="mode-tabs">
+      <button
+        type="button"
+        class="mode-tab"
+        [class.active]="mode === 'email'"
+        (click)="setMode('email')"
+      >
+        <i class="fas fa-envelope"></i>
+        Email
+      </button>
+
+      <button
+        type="button"
+        class="mode-tab"
+        [class.active]="mode === 'collegeId'"
+        (click)="setMode('collegeId')"
+      >
+        <i class="fas fa-id-card"></i>
+        College ID
+      </button>
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+
+      <!-- EMAIL MODE -->
+      <div class="form-group" *ngIf="mode === 'email'">
+        <label class="form-label">Email Address</label>
+
+        <input
+          type="email"
+          class="form-control"
+          [class.is-invalid]="f['email'].touched && !f['email'].value"
+          formControlName="email"
+          placeholder="Enter Your Email-id"
+          autocomplete="username"
+        />
+      </div>
+
+      <!-- COLLEGE ID MODE -->
+      <ng-container *ngIf="mode === 'collegeId'">
+
+        <div class="form-group">
+          <label class="form-label">College ID</label>
+
+          <input
+            type="text"
+            class="form-control"
+            [class.is-invalid]="
+              f['collegeId'].touched && !f['collegeId'].value
+            "
+            formControlName="collegeId"
+            placeholder="Enter your College ID"
+            autocomplete="username"
+          />
+
+          <div class="field-hint">
+            <i class="fas fa-info-circle"></i>
+            Students can enter their Enrollment Number;
+            Faculty can enter their Employee ID.
+          </div>
+        </div>
+
+      </ng-container>
+
+      <!-- PASSWORD -->
+      <div class="form-group">
+
+        <label class="form-label">Password</label>
+
+        <div class="input-with-icon">
+
+          <input
+            [type]="showPassword ? 'text' : 'password'"
+            class="form-control"
+            [class.is-invalid]="
+              f['password'].invalid && f['password'].touched
+            "
+            formControlName="password"
+            placeholder="Enter the Password"
+            autocomplete="current-password"
+          />
+
+          <button
+            type="button"
+            class="toggle-password"
+            (click)="showPassword = !showPassword"
+            [attr.aria-label]="
+              showPassword ? 'Hide password' : 'Show password'
+            "
+          >
+            <i
+              [class]="
+                showPassword
+                  ? 'fas fa-eye-slash'
+                  : 'fas fa-eye'
+              "
+            ></i>
+          </button>
+
+        </div>
+
+        <!-- Password Required -->
+        <div
+          class="invalid-feedback"
+          *ngIf="
+            f['password'].errors?.['required'] &&
+            f['password'].touched
+          "
+        >
+          Password is required.
+        </div>
+
+        <!-- Password Length -->
+        <div
+          class="invalid-feedback"
+          *ngIf="
+            f['password'].errors?.['minlength'] &&
+            f['password'].touched
+          "
+        >
+          Password must be at least 6 characters.
+        </div>
+
+      </div>
+
+      <!-- SIGN IN BUTTON -->
+      <div class="signin-button-container">
+
+        <button
+          type="submit"
+          class="btn btn-primary signin-btn"
+          [disabled]="loading"
+        >
+
+          <i
+            class="fas fa-spinner fa-spin"
+            *ngIf="loading"
+          ></i>
+
+          <span>
+            {{ loading ? 'Signing in...' : 'Sign In' }}
+          </span>
+
+        </button>
+
+      </div>
+
+      <!-- Login Status Message -->
+      <div
+        class="login-message success-message"
+        *ngIf="successMessage"
+      >
+        <i class="fas fa-check-circle"></i>
+        {{ successMessage }}
+      </div>
+
+      <div
+        class="login-message error-message"
+        *ngIf="error"
+      >
+        <i class="fas fa-times-circle"></i>
+        {{ error }}
+      </div>
+
+    </form>
+
+    <!-- Links -->
+    <div class="auth-links">
+
+      <p>New user? Register as:</p>
+
+      <div class="register-links">
+
+        <a routerLink="/auth/register/student">
+          Student
+        </a>
+
+        <a routerLink="/auth/register/faculty">
+          Faculty
+        </a>
+
+        <a routerLink="/auth/register/college-admin">
+          College Admin
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>

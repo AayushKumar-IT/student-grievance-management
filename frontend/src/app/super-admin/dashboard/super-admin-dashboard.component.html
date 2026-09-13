@@ -1,0 +1,82 @@
+<app-sidebar />
+<div class="main-content">
+  <app-navbar />
+  <div class="page-content">
+
+    <!-- Header -->
+    <div class="page-header">
+      <div>
+        <h2>Welcome, {{ userName }}</h2>
+        <p class="text-muted">System-wide overview</p>
+      </div>
+      <div class="header-actions">
+        <a routerLink="/super-admin/college-management"   class="header-nav-btn">
+          <i class="fas fa-university"></i> Colleges
+        </a>
+        <a routerLink="/super-admin/college-admins"       class="header-nav-btn">
+          <i class="fas fa-user-shield"></i> College Admins
+        </a>
+        <a routerLink="/super-admin/faculty-records"      class="header-nav-btn">
+          <i class="fas fa-chalkboard-teacher"></i> Faculty
+        </a>
+        <a routerLink="/super-admin/student-records"      class="header-nav-btn">
+          <i class="fas fa-user-graduate"></i> Students
+        </a>
+        <a routerLink="/super-admin/token-generator"      class="header-nav-btn header-nav-btn-primary">
+          <i class="fas fa-key"></i> Generate Token
+        </a>
+      </div>
+    </div>
+
+    <app-loading-spinner *ngIf="loading" />
+
+    <ng-container *ngIf="!loading">
+
+      <!-- Row 1: main counts -->
+      <div class="grid grid-5 mb-4">
+        <a routerLink="/super-admin/college-management" class="card-link-wrap">
+          <app-dashboard-card title="Total Colleges"     [value]="stats.totalColleges     ?? 0" icon="fas fa-university"          color="primary" />
+        </a>
+        <a routerLink="/super-admin/student-records" class="card-link-wrap">
+          <app-dashboard-card title="Total Students"     [value]="stats.totalStudents     ?? 0" icon="fas fa-user-graduate"       color="info" />
+        </a>
+        <a routerLink="/super-admin/faculty-records" class="card-link-wrap">
+          <app-dashboard-card title="Total Faculty"      [value]="stats.totalFaculty      ?? 0" icon="fas fa-chalkboard-teacher"  color="success" />
+        </a>
+        <a routerLink="/super-admin/college-admins" class="card-link-wrap">
+          <app-dashboard-card title="College Admins"     [value]="stats.totalCollegeAdmins ?? 0" icon="fas fa-user-shield"       color="warning" />
+        </a>
+        <app-dashboard-card   title="Total Grievances"   [value]="stats.totalGrievances   ?? 0" icon="fas fa-clipboard-list"    color="warning" />
+      </div>
+
+      <!-- Row 2: grievance stats -->
+      <div class="grid grid-3">
+        <div class="card stat-card stat-card-link" routerLink="/super-admin/reports">
+          <div class="stat-icon resolved"><i class="fas fa-check-circle"></i></div>
+          <div class="stat-info">
+            <h4>{{ stats.resolvedGrievances ?? 0 }}</h4>
+            <p>Resolved Grievances</p>
+          </div>
+          <i class="fas fa-arrow-right stat-arrow"></i>
+        </div>
+        <div class="card stat-card stat-card-link" routerLink="/super-admin/reports">
+          <div class="stat-icon pending"><i class="fas fa-clock"></i></div>
+          <div class="stat-info">
+            <h4>{{ stats.pendingGrievances ?? 0 }}</h4>
+            <p>Pending Grievances</p>
+          </div>
+          <i class="fas fa-arrow-right stat-arrow"></i>
+        </div>
+        <div class="card stat-card stat-card-link" routerLink="/super-admin/reports">
+          <div class="stat-icon critical"><i class="fas fa-exclamation-triangle"></i></div>
+          <div class="stat-info">
+            <h4>{{ stats.criticalGrievances ?? 0 }}</h4>
+            <p>Critical / High Risk</p>
+          </div>
+          <i class="fas fa-arrow-right stat-arrow"></i>
+        </div>
+      </div>
+
+    </ng-container>
+  </div>
+</div>
